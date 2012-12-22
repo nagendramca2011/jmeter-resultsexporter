@@ -1,4 +1,5 @@
-
 *.class
-
-target/test-classes/org/soframel/jmeter/resultexporter/AppTest.class
+.classpath
+.project
+.settings
+target
