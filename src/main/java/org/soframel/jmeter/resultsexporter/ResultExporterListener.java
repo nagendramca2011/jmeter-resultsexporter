@@ -88,8 +88,12 @@ public class ResultExporterListener extends ResultCollector implements ActionLis
 	public void testStarted() {
 		// delete main file in root dir for each test, because it is reused
 		File f = new File(this.getFilename());
-		f.delete();
-
+		boolean deleted=f.delete();
+		if(!deleted)
+			log.error("Could not delete output file "+this.getFilename()+": data file may contain too much entries!");
+		//TODO: reproduce bug when file was not deleted - it contained too many entries !
+		//idea: write the file in a subdirectory, or with a name containing a timestamp, to be sure
+		
 		//test if configuration should be asked
 		if(this.isPopupsBeforeTest())
 			this.prepareExport();
