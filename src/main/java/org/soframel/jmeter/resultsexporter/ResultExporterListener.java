@@ -31,6 +31,7 @@ import org.apache.jmeter.reporters.ResultCollector;
 import org.apache.jmeter.save.SaveGraphicsService;
 import org.apache.jmeter.services.FileServer;
 import org.apache.jmeter.testelement.TestElement;
+import org.apache.jmeter.testelement.WorkBench;
 import org.apache.jmeter.threads.ThreadGroup;
 import org.apache.jmeter.visualizers.Printable;
 import org.apache.jorphan.logging.LoggingManager;
