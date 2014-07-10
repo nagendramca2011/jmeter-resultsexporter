@@ -337,7 +337,9 @@ public class ResultExporterListener extends ResultCollector implements ActionLis
 		JMeterTreeNode containingTG=null;
 		
 		JMeterTreeNode parent=(JMeterTreeNode) node.getParent();
-		if(parent.getTestElement() instanceof ThreadGroup)
+		//if we've reached the ThreadGroup we're in, or, in case we're not in a ThreadGroup, if we've reached
+		//the WorkBench (root)
+		if ((parent.getTestElement() instanceof ThreadGroup) || (parent.getTestElement() instanceof WorkBench))
 			containingTG=parent;
 		
 		if(containingTG==null && parent!=null && !parent.equals(node)){
